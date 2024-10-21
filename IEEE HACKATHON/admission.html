@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC COLLEGE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function myfun() {
+            var name = f1.name.value;
+            var age = f1.age.value;
+            var gender = document.querySelector('input[name="gender"]:checked'); // Check gender
+            var contact = f1.contact.value;
+            var email = f1.email.value;
+            var cutoff = f1.cutoff.value;
+            var department = f1.department.value;
+            var country = f1.country.value;
+            var state = f1.state.value;
+            var city = f1.city.value;
+            var pincode = f1.pincode.value;
+    
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (age == "" || age < 1) {
+                alert("Please enter a valid age");
+                return false;
+            }
+            if (!gender) { // Check if a gender is selected
+                alert("Please select your gender");
+                return false;
+            }
+            if (contact == "" || isNaN(contact) || contact.length != 10) {
+                alert("Please enter a valid 10-digit mobile number");
+                return false;
+            }
+            
+            let atpos = email.indexOf('@');
+            let dotpos = email.lastIndexOf('.');
+            if (atpos < 1 || dotpos === email.length - 1 || dotpos <= atpos + 1) {
+                alert("Invalid email: The email must have characters before and after '@'");
+                return false;
+            }
+            
+            if (cutoff == "") {
+                alert("Please enter cutoff marks");
+                return false;
+            }
+            if (department == "Select Department") {
+                alert("Please select a department");
+                return false;
+            }
+            if (country == "Select Country") {
+                alert("Please select your country");
+                return false;
+            }
+            if (state == "Select State") {
+                alert("Please select your state");
+                return false;
+            }
+            if (city == "") {
+                alert("City must be filled out");
+                return false;
+            }
+            if (pincode == "" || isNaN(pincode) || pincode.length != 6) {
+                alert("Please enter a valid 6-digit pincode");
+                return false;
+            }
+    
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>    
+    <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f3f5f7;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #003366;
+        color: white;
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        margin-left: 20px;
+    }
+
+    .name {
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .name h3 {
+        font-size: 28px;
+        margin: 0;
+    }
+
+    .name p {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #00ff99;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 30px auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-inline {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-inline label {
+        flex: 1;
+    }
+
+    .form-inline input,
+    .form-inline select {
+        flex: 2;
+        margin-left: 10px;
+    }
+    .radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.radio-group input {
+    margin: 0;
+}
+
+
+    .btn {
+        margin-top: 10px;
+    }
+
+    .banner {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .banner-text h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-text p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+    footer {
+        background-color: #003366;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .social-icons a {
+        color: white;
+        margin: 0 10px;
+        font-size: 24px;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: #00ff99;
+        transform: scale(1.2);
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://media.istockphoto.com/id/1350696625/vector/education-emblem-with-book-and-graduation-cap.jpg?s=612x612&w=0&k=20&c=5jy03wNwUbwz4UmbQkHwpubd5TtNmTVAXeCKVM806Sw=" alt="ABC College Logo" class="logo-img">
+        </div>
+        <div class="name">
+            <h3>ABC ENGINEERING COLLEGE</h3>
+            <p>An AUTONOMOUS Institution</p>
+            <p>Affiliated to ANNA UNIVERSITY, Chennai</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="academic.html">About</a></li>
+                <li><a href="admission.html">Admissions</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="https://images.unsplash.com/20/cambridge.JPG?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="ABC College Banner">
+        <div class="banner-text">
+            <h1>Welcome to ABC Engineering College</h1>
+            <h3>Apply for the course you wish!</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Application Form</h2>
+        <form name="f1" action="reg.php" method="post" onsubmit="return myfun()">
+            <div class="form-inline">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control">
+            </div>
+            <div class="form-inline">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" class="form-control">
+            </div>
+
+            <div class="form-inline">
+                <label>Contact Number:</label>
+                <input type="text" id="contact" name="contact" class="form-control">
+            </div>
+            <div class="form-inline">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" class="form-control">
+            </div>
+
+            <div class="form-inline">
+                <label for="gender">Gender:</label>
+                <input type="radio" id="male" name="gender" value="male"> Male
+                <input type="radio" id="female" name="gender" value="female"> Female
+                <input type="radio" id="other" name="gender" value="other"> Other
+            </div>
+
+            <div class="form-inline">
+                <label for="cutoff">Cutoff Marks:</label>
+                <input type="text" id="cutoff" name="cutoff" class="form-control">
+            </div>
+
+            <div class="form-inline">
+                <label for="department">Department:</label>
+                <select id="department" name="department" class="form-control">
+                    <option>Select Department</option>
+                    <option>CSE</option>
+                    <option>IT</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>Civil</option>
+                </select>
+            </div>
+
+            <div class="form-inline">
+                <label for="country">Country:</label>
+                <select id="country" name="country" class="form-control">
+                    <option>Select Country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                    <option>Australia</option>
+                </select>
+            </div>
+
+            <div class="form-inline">
+                <label for="state">State:</label>
+                <select id="state" name="state" class="form-control">
+                    <option>Select State</option>
+                    <option>Tamil Nadu</option>
+                    <option>Karnataka</option>
+                    <option>Kerala</option>
+                    <option>Andhra Pradesh</option>
+                </select>
+            </div>
+
+            <div class="form-inline">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" class="form-control">
+            </div>
+
+            <div class="form-inline">
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" class="form-control">
+            </div>
+
+            <div class="form-inline">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ABC College. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
